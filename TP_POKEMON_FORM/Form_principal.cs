@@ -1,8 +1,8 @@
 namespace TP_POKEMON_FORM
 {
-    public partial class Form1 : Form
+    public partial class Form_principal : Form
     {
-        public Form1()
+        public Form_principal()
         {
             InitializeComponent();
         }
