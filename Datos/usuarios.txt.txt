@@ -1,2 +1,0 @@
-usuario1 pepito user
-admin jose admin

@@ -18,7 +18,11 @@ namespace Datos
         public static void LeerLineaALinea(string path)
         {
             StreamReader sr = File.OpenText(path);
-            sr.ReadLine();  
+            var contenido = sr.ReadLine();
+            Console.Write(contenido);
+
+            sr.Close();
+            sr.Dispose();
 
         }
 
