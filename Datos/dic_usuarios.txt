@@ -1,9 +1,9 @@
 usuario1
 pepito
-usuario 
+user 
 admin
 0000
-administrador 
+admin
 jose 
 1234
-usuario
+user
