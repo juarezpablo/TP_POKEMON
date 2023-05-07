@@ -15,14 +15,18 @@ namespace Consola_Pruebas
             //2     Console.WriteLine(item);
             //2 }
 
-            var lista_usuarios = Archivo.DevolverListaArchivoDiccUsuarios(direccion);
-            foreach (var item in lista_usuarios)
-            {
-                Console.WriteLine(item["nombre"]);
-                Console.WriteLine(item["contrasenia"]);
-                Console.WriteLine(item["rol"]);
-                Console.WriteLine("-----------------");
-            }
+            var lista_users = Archivo.DevolverListaDiccUsuarios(direccion);
+
+          //  foreach (var item in lista_users)
+         //   {
+           //     Console.WriteLine(item["nombre"]);
+         //       Console.WriteLine(item["contrasenia"]);
+         //       Console.WriteLine(item["rol"]);
+         //       Console.WriteLine("-----------------");
+         //   }
+            
+            DatosUsuarios.CrearListaUsuarios(lista_users);
+            DatosUsuarios.MostrarListaUsuarios();
 
            
         }

@@ -37,30 +37,31 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(119, 271);
+            buttonLogin.Location = new Point(172, 269);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(207, 29);
             buttonLogin.TabIndex = 0;
-            buttonLogin.Text = "button1";
+            buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(163, 85);
+            label1.Location = new Point(172, 82);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(59, 20);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "Usuario";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(172, 167);
+            label2.Location = new Point(172, 168);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(87, 20);
             label2.TabIndex = 2;
-            label2.Text = "label2";
+            label2.Text = "Contrasenia";
             // 
             // textBoxNombre
             // 

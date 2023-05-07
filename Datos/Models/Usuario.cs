@@ -27,6 +27,17 @@ namespace Datos.Models
         }
 
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(_nombre);
+            sb.AppendLine(_contrasenia);
+            sb.AppendLine(_rol);
+            
+            return sb.ToString();
+        }
+
+
         
 
     }

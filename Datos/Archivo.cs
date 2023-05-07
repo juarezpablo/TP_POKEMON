@@ -49,7 +49,7 @@ namespace Datos
         }
 
 
-        public static List<Dictionary<string, string>> DevolverListaArchivoDiccUsuarios(string path)
+        public static List<Dictionary<string, string>> DevolverListaDiccUsuarios(string path)
         {
             StreamReader sr = File.OpenText(path);
             var lista_users = new List<Dictionary<string, string>>();
@@ -69,8 +69,7 @@ namespace Datos
                     {
                         user.Add("rol", contenido);
                     } 
-                } 
-                
+                }    
                 // Console.WriteLine(contenido);
                 lista_users.Add(user);
             }
