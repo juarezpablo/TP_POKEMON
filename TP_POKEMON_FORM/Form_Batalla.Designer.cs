@@ -37,6 +37,7 @@
             buttonAtaque = new Button();
             progressBarOponente = new ProgressBar();
             progressBarpokemon = new ProgressBar();
+            buttonSig = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMiPokemon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxOponente).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             comboBoxMisPokemones.Name = "comboBoxMisPokemones";
             comboBoxMisPokemones.Size = new Size(151, 28);
             comboBoxMisPokemones.TabIndex = 0;
+            comboBoxMisPokemones.Visible = false;
             comboBoxMisPokemones.SelectedIndexChanged += comboBoxMisPokemones_SelectedIndexChanged;
             // 
             // pictureBoxMiPokemon
@@ -118,11 +120,22 @@
             progressBarpokemon.Size = new Size(125, 29);
             progressBarpokemon.TabIndex = 8;
             // 
+            // buttonSig
+            // 
+            buttonSig.Location = new Point(58, 347);
+            buttonSig.Name = "buttonSig";
+            buttonSig.Size = new Size(168, 29);
+            buttonSig.TabIndex = 9;
+            buttonSig.Text = "Elegir Pokemon";
+            buttonSig.UseVisualStyleBackColor = true;
+            buttonSig.Click += buttonSig_Click;
+            // 
             // Form_Batalla
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(963, 515);
+            Controls.Add(buttonSig);
             Controls.Add(progressBarpokemon);
             Controls.Add(progressBarOponente);
             Controls.Add(buttonAtaque);
@@ -153,5 +166,6 @@
         private Button buttonAtaque;
         private ProgressBar progressBarOponente;
         private ProgressBar progressBarpokemon;
+        private Button buttonSig;
     }
 }

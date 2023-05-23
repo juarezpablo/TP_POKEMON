@@ -18,6 +18,9 @@ namespace TP_POKEMON_FORM
         List<Pokemon> ListaPokemonesUser;
         Pokemon pokemonOponente;
         Pokemon pokemonRetador;
+        int contador = 0;
+        int maxVidaoponente;
+        int maxVidaretador;
         public Form_Batalla(List<Pokemon> ListaPokemones, List<Pokemon> Lista_Pokemones_user)
         {
             InitializeComponent();
@@ -30,7 +33,7 @@ namespace TP_POKEMON_FORM
             }
             comboBoxMisPokemones.DataSource = ListaPokemonesUser;
 
-
+            
 
         }
 
@@ -44,6 +47,9 @@ namespace TP_POKEMON_FORM
             pictureBoxOponente.Image = Image.FromFile(pokemonRandom.path_imagen);
             labelOponente.Text = pokemonRandom.Nombre.ToString();
             pokemonOponente = pokemonRandom;
+            maxVidaoponente = pokemonOponente.Vida;
+            maxVidaretador = pokemonRetador.Vida;
+            progressBarOponente.Maximum = maxVidaoponente;
             ActualizarBatalla();
 
         }
@@ -61,7 +67,7 @@ namespace TP_POKEMON_FORM
         private void Form_Batalla_Load(object sender, EventArgs e)
         {
             comboBoxMisPokemones.DataSource = ListaPokemonesUser;
-            
+
         }
 
         private void Form_Batalla_MouseMove(object sender, MouseEventArgs e)
@@ -71,18 +77,39 @@ namespace TP_POKEMON_FORM
 
         private void ActualizarBatalla()
         {
-            progressBarOponente.Maximum = pokemonOponente.Vida;
+            
             progressBarOponente.Value = pokemonOponente.Vida;
-            progressBarpokemon.Maximum = pokemonRetador.Vida;
+            progressBarpokemon.Maximum = maxVidaretador;
             progressBarpokemon.Value = pokemonRetador.Vida;
         }
 
         private void buttonAtaque_Click(object sender, EventArgs e)
         {
-            foreach (Pokemon p in pokemonesUsuario)
+            //foreach (Pokemon p in pokemonesUsuario)
+            //{
+              //  MessageBox.Show(p.Nombre);
+            //}
+
+            pokemonOponente.Vida = LogicaJuego.Pelear(pokemonRetador, pokemonOponente);
+            pokemonRetador.Vida = LogicaJuego.Pelear(pokemonOponente, pokemonRetador);
+            string vida = pokemonOponente.Vida.ToString();
+            MessageBox.Show(vida);
+            ActualizarBatalla();
+        }
+
+        private void buttonSig_Click(object sender, EventArgs e)
+        {
+            if (contador < pokemonesUsuario.Count)
             {
-                MessageBox.Show(p.Nombre);
+                pokemonRetador = pokemonesUsuario[contador];
+                contador += 1;
             }
+            else
+            {
+                contador= 0;
+            }
+            pictureBoxMiPokemon.Image = Image.FromFile(pokemonRetador.path_imagen);
+            labelMipokemon.Text = pokemonRetador.Nombre;
         }
     }
 }

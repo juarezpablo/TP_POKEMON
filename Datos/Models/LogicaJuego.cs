@@ -10,16 +10,36 @@ namespace Datos.Models
     {
 
         
-
-        public static Dictionary<string,int> Pelear(Pokemon retadorIngresadp, Pokemon oponenteIngresado)
+        public static int Pelear(Pokemon retadorIngresadp, Pokemon oponenteIngresado)
         { 
             var retador=retadorIngresadp;
             var oponente=oponenteIngresado;
+            Random numeroRandom = new Random();
+            int numeroPorcentaje = numeroRandom.Next(10);
 
-            Dictionary<string,int> resultado=new Dictionary<string,int>();
+            
+            if (numeroPorcentaje < 8)//80porciento probabilidad de dano total
+             {
+                 oponente.Vida -= retador.PoderAtaque;
+             }
+             else
+                 {
+                   oponente.Vida -= (retador.PoderAtaque / 2);
+                }
+                    
+             numeroPorcentaje=numeroRandom.Next(10);
+
+
+
+
+
+
+            int resultado = oponente.Vida;
             return resultado;
 
            
         }
+
+        
     }
 }
