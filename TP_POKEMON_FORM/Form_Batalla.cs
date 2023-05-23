@@ -33,7 +33,7 @@ namespace TP_POKEMON_FORM
             }
             comboBoxMisPokemones.DataSource = ListaPokemonesUser;
 
-            
+
 
         }
 
@@ -77,23 +77,27 @@ namespace TP_POKEMON_FORM
 
         private void ActualizarBatalla()
         {
-            
+
             progressBarOponente.Value = pokemonOponente.Vida;
             progressBarpokemon.Maximum = maxVidaretador;
             progressBarpokemon.Value = pokemonRetador.Vida;
+            string nuevoString = ($"{pokemonRetador.Vida} / {maxVidaretador}");
+            string nuevoString2 = ($"{pokemonOponente.Vida} / {maxVidaoponente}");
+            labelVidaRetador.Text = (nuevoString);
+            labelVidaOponente.Text = (nuevoString2);
         }
 
         private void buttonAtaque_Click(object sender, EventArgs e)
         {
             //foreach (Pokemon p in pokemonesUsuario)
             //{
-              //  MessageBox.Show(p.Nombre);
+            //  MessageBox.Show(p.Nombre);
             //}
 
             pokemonOponente.Vida = LogicaJuego.Pelear(pokemonRetador, pokemonOponente);
             pokemonRetador.Vida = LogicaJuego.Pelear(pokemonOponente, pokemonRetador);
-            string vida = pokemonOponente.Vida.ToString();
-            MessageBox.Show(vida);
+            //string vida = pokemonOponente.Vida.ToString();
+            // MessageBox.Show(vida);
             ActualizarBatalla();
         }
 
@@ -106,7 +110,7 @@ namespace TP_POKEMON_FORM
             }
             else
             {
-                contador= 0;
+                contador = 0;
             }
             pictureBoxMiPokemon.Image = Image.FromFile(pokemonRetador.path_imagen);
             labelMipokemon.Text = pokemonRetador.Nombre;

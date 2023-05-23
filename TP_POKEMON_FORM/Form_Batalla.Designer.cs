@@ -38,6 +38,8 @@
             progressBarOponente = new ProgressBar();
             progressBarpokemon = new ProgressBar();
             buttonSig = new Button();
+            labelVidaRetador = new Label();
+            labelVidaOponente = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMiPokemon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxOponente).BeginInit();
             SuspendLayout();
@@ -45,7 +47,7 @@
             // comboBoxMisPokemones
             // 
             comboBoxMisPokemones.FormattingEnabled = true;
-            comboBoxMisPokemones.Location = new Point(59, 381);
+            comboBoxMisPokemones.Location = new Point(82, 410);
             comboBoxMisPokemones.Name = "comboBoxMisPokemones";
             comboBoxMisPokemones.Size = new Size(151, 28);
             comboBoxMisPokemones.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // pictureBoxMiPokemon
             // 
-            pictureBoxMiPokemon.Location = new Point(48, 39);
+            pictureBoxMiPokemon.Location = new Point(58, 44);
             pictureBoxMiPokemon.Name = "pictureBoxMiPokemon";
             pictureBoxMiPokemon.Size = new Size(226, 226);
             pictureBoxMiPokemon.TabIndex = 1;
@@ -63,25 +65,28 @@
             // labelMipokemon
             // 
             labelMipokemon.AutoSize = true;
+            labelMipokemon.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelMipokemon.Location = new Point(114, 9);
             labelMipokemon.Name = "labelMipokemon";
-            labelMipokemon.Size = new Size(72, 20);
+            labelMipokemon.Size = new Size(105, 32);
             labelMipokemon.TabIndex = 2;
             labelMipokemon.Text = "pokemon";
             // 
             // buttonBuscarOponente
             // 
-            buttonBuscarOponente.Location = new Point(339, 23);
+            buttonBuscarOponente.BackColor = Color.FromArgb(192, 0, 0);
+            buttonBuscarOponente.ForeColor = Color.White;
+            buttonBuscarOponente.Location = new Point(362, 26);
             buttonBuscarOponente.Name = "buttonBuscarOponente";
             buttonBuscarOponente.Size = new Size(94, 58);
             buttonBuscarOponente.TabIndex = 3;
             buttonBuscarOponente.Text = "Buscar Oponente";
-            buttonBuscarOponente.UseVisualStyleBackColor = true;
+            buttonBuscarOponente.UseVisualStyleBackColor = false;
             buttonBuscarOponente.Click += buttonBuscarOponente_Click;
             // 
             // pictureBoxOponente
             // 
-            pictureBoxOponente.Location = new Point(549, 39);
+            pictureBoxOponente.Location = new Point(558, 44);
             pictureBoxOponente.Name = "pictureBoxOponente";
             pictureBoxOponente.Size = new Size(224, 226);
             pictureBoxOponente.TabIndex = 4;
@@ -90,15 +95,16 @@
             // labelOponente
             // 
             labelOponente.AutoSize = true;
+            labelOponente.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelOponente.Location = new Point(611, 9);
             labelOponente.Name = "labelOponente";
-            labelOponente.Size = new Size(72, 20);
+            labelOponente.Size = new Size(105, 32);
             labelOponente.TabIndex = 5;
             labelOponente.Text = "pokemon";
             // 
             // buttonAtaque
             // 
-            buttonAtaque.Location = new Point(339, 339);
+            buttonAtaque.Location = new Point(375, 329);
             buttonAtaque.Name = "buttonAtaque";
             buttonAtaque.Size = new Size(94, 29);
             buttonAtaque.TabIndex = 6;
@@ -115,14 +121,14 @@
             // 
             // progressBarpokemon
             // 
-            progressBarpokemon.Location = new Point(94, 288);
+            progressBarpokemon.Location = new Point(114, 289);
             progressBarpokemon.Name = "progressBarpokemon";
             progressBarpokemon.Size = new Size(125, 29);
             progressBarpokemon.TabIndex = 8;
             // 
             // buttonSig
             // 
-            buttonSig.Location = new Point(58, 347);
+            buttonSig.Location = new Point(82, 354);
             buttonSig.Name = "buttonSig";
             buttonSig.Size = new Size(168, 29);
             buttonSig.TabIndex = 9;
@@ -130,11 +136,34 @@
             buttonSig.UseVisualStyleBackColor = true;
             buttonSig.Click += buttonSig_Click;
             // 
+            // labelVidaRetador
+            // 
+            labelVidaRetador.AutoSize = true;
+            labelVidaRetador.Font = new Font("Lucida Sans Unicode", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            labelVidaRetador.Location = new Point(262, 293);
+            labelVidaRetador.Name = "labelVidaRetador";
+            labelVidaRetador.Size = new Size(70, 23);
+            labelVidaRetador.TabIndex = 10;
+            labelVidaRetador.Text = "label1";
+            // 
+            // labelVidaOponente
+            // 
+            labelVidaOponente.AutoSize = true;
+            labelVidaOponente.Font = new Font("Lucida Sans Unicode", 10.8F, FontStyle.Italic, GraphicsUnit.Point);
+            labelVidaOponente.Location = new Point(775, 293);
+            labelVidaOponente.Name = "labelVidaOponente";
+            labelVidaOponente.Size = new Size(62, 22);
+            labelVidaOponente.TabIndex = 11;
+            labelVidaOponente.Text = "label2";
+            // 
             // Form_Batalla
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.pokestadio;
             ClientSize = new Size(963, 515);
+            Controls.Add(labelVidaOponente);
+            Controls.Add(labelVidaRetador);
             Controls.Add(buttonSig);
             Controls.Add(progressBarpokemon);
             Controls.Add(progressBarOponente);
@@ -167,5 +196,7 @@
         private ProgressBar progressBarOponente;
         private ProgressBar progressBarpokemon;
         private Button buttonSig;
+        private Label labelVidaRetador;
+        private Label labelVidaOponente;
     }
 }
