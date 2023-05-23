@@ -30,17 +30,18 @@
         {
             menuStrip1 = new MenuStrip();
             loginToolStripMenuItem = new ToolStripMenuItem();
-            buttonPrincipalLogin = new Button();
+            listaPokemonToolStripMenuItem = new ToolStripMenuItem();
+            dueloToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, listaPokemonToolStripMenuItem, dueloToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(991, 28);
+            menuStrip1.Size = new Size(1275, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -51,22 +52,25 @@
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
-            // buttonPrincipalLogin
+            // listaPokemonToolStripMenuItem
             // 
-            buttonPrincipalLogin.Location = new Point(68, 369);
-            buttonPrincipalLogin.Name = "buttonPrincipalLogin";
-            buttonPrincipalLogin.Size = new Size(94, 29);
-            buttonPrincipalLogin.TabIndex = 2;
-            buttonPrincipalLogin.Text = "Login";
-            buttonPrincipalLogin.UseVisualStyleBackColor = true;
-            buttonPrincipalLogin.Click += buttonPrincipalLogin_Click;
+            listaPokemonToolStripMenuItem.Name = "listaPokemonToolStripMenuItem";
+            listaPokemonToolStripMenuItem.Size = new Size(118, 24);
+            listaPokemonToolStripMenuItem.Text = "Lista Pokemon";
+            listaPokemonToolStripMenuItem.Click += listaPokemonToolStripMenuItem_Click;
+            // 
+            // dueloToolStripMenuItem
+            // 
+            dueloToolStripMenuItem.Name = "dueloToolStripMenuItem";
+            dueloToolStripMenuItem.Size = new Size(69, 24);
+            dueloToolStripMenuItem.Text = "Batalla";
+            dueloToolStripMenuItem.Click += dueloToolStripMenuItem_Click;
             // 
             // Form_principal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(991, 546);
-            Controls.Add(buttonPrincipalLogin);
+            ClientSize = new Size(1275, 546);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -82,6 +86,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem loginToolStripMenuItem;
-        private Button buttonPrincipalLogin;
+        private ToolStripMenuItem listaPokemonToolStripMenuItem;
+        private ToolStripMenuItem dueloToolStripMenuItem;
     }
 }

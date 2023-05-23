@@ -1,10 +1,13 @@
 ﻿using Datos;
+using Datos.Models;
+
 namespace Consola_Pruebas
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+         
             Console.WriteLine("Hello, World!");
             var direccion = "C:\\Users\\VAIO}\\source\\repos\\TP_POKEMON\\Datos\\usuarios.txt";
             //Archivo.LeerArchivo(direccion);
@@ -17,16 +20,27 @@ namespace Consola_Pruebas
 
             var lista_users = Archivo.DevolverListaDiccUsuarios(direccion);
 
-          //  foreach (var item in lista_users)
-         //   {
-           //     Console.WriteLine(item["nombre"]);
-         //       Console.WriteLine(item["contrasenia"]);
-         //       Console.WriteLine(item["rol"]);
-         //       Console.WriteLine("-----------------");
-         //   }
             
+            var userNombre = "admin";
+            var userPass = "0000";
+
             DatosUsuarios.CrearListaUsuarios(lista_users);
-            DatosUsuarios.MostrarListaUsuarios();
+            // DatosUsuarios.MostrarListaUsuarios();
+            // if (DatosUsuarios.VerificarUsuario(userNombre, userPass))
+            // {
+            //     Console.WriteLine("ok");
+            // }
+
+
+            // var lista_pokemons = DatosPokemon.CrearListaPokemon();
+            List<Pokemon> Lista;
+            Lista=new List<Pokemon>();
+            Lista=DatosPokemon.CrearListaPokemon();
+            foreach(var pokemon in Lista)
+            {
+                Console.WriteLine(pokemon.Nombre);
+            }
+          //  DatosPokemon.MostrarListaPokemon();
 
            
         }

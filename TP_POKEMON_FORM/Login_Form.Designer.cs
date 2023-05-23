@@ -89,6 +89,7 @@
             Controls.Add(buttonLogin);
             Name = "Login_Form";
             Text = "Login";
+            Load += Login_Form_Load;
             ResumeLayout(false);
             PerformLayout();
         }
